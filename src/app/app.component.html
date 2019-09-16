@@ -1,0 +1,25 @@
+<div class="card">
+<div class="split-example">
+      <as-split #mySplit [disabled]="false" gutterSize="10" direction="vertical" [useTransition]="useTransition" (gutterClick)="gutterClick($event)"  [gutterDblClickDuration]="0">
+         <as-split-area [size]="size1" [order]="1" id="logExpand">
+            <div id="logContent">
+            </div>
+         </as-split-area>
+         <as-split-area [size]="size2" [order]="2" id="logDesc" style="background: white">
+            <!-- <button (click)="maximizePanel()" *ngIf="!fullScreen">Maximize panel</button>
+            <button (click)="maximizePanel()" *ngIf="fullScreen">Exit fullscreen</button> -->
+            <img _ngcontent-trf-c8="" alt="import" class="img-create-new float-right" src="assets/maximize.svg" style="height: 19px;width:19px;margin-top: 5px;cursor: pointer;" (click)="maximizePanel()">&nbsp;
+            <p *ngIf="!logsSelected">Click on log to see its description here</p>
+            <div *ngIf="logsSelected">
+               Time: {{logsSelected['time']}}<br/>
+               Message: {{logsSelected['data'][0]}}<br/><br/>
+               <span *ngIf="logsSelected['data'].length > 1">Data:</span>
+               <pre>
+                  {{logsSelected['dataDisplay']}}
+               </pre>
+               <br/>
+            </div>
+         </as-split-area>
+      </as-split>
+   </div>
+  </div>
